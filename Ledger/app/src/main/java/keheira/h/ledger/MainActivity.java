@@ -16,13 +16,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = (ListView)findViewById(R.id.listView);
-        ArrayList<String> log = new ArrayList<>();
+        ArrayList<Payee> log = new ArrayList<>();
 
         //add in names
-        log.add("Mom");
+        log.add(new Payee("Mom", 100.50));
+        log.add(new Payee("Dad", 50.00));
+        log.add(new Payee("Brother", 60.00));
+        log.add(new Payee("Cousin", 10.00));
 
         //list adapter
-        ArrayAdapter<String> items = new ArrayAdapter<String>(this, R.layout.ledger_items, log);
-        listView.setAdapter(items);
+        ListAdapter adapter = new ListAdapter(this, log);
+        listView.setAdapter(adapter);
     }
 }

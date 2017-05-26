@@ -12,4 +12,12 @@ public class Payee {
         name = n;
         amount = a;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
 }
