@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -29,7 +30,9 @@ public class ListAdapter extends ArrayAdapter<Payee> {
         TextView name = (TextView)convertView.findViewById(R.id.name);
         TextView amount = (TextView)convertView.findViewById(R.id.amount);
         name.setText(payee.getName());
-        amount.setText(String.valueOf(payee.getAmount()));
+        //format amount
+        DecimalFormat df = new DecimalFormat("0.00");
+        amount.setText(df.format(payee.getAmount()));
         return convertView;
     }
 }
