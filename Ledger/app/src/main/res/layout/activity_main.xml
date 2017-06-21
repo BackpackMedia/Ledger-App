@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:orientation="horizontal"
     tools:context="keheira.h.ledger.MainActivity">
 
@@ -11,7 +12,6 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
         android:divider="@color/colorPrimaryDark"
         android:dividerHeight="0.1dp" />
 

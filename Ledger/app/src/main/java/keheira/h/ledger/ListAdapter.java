@@ -17,6 +17,7 @@ import java.util.ArrayList;
  */
 
 public class ListAdapter extends ArrayAdapter<Payee> {
+    private ArrayList<Payee> resultsList;
     public ListAdapter(Context context, ArrayList<Payee> payee) {
         super(context, 0, payee);
     }
