@@ -10,7 +10,7 @@
     </style>
 
     <style name="AppTheme.ActionBar" parent="@android:style/Widget.ActionBar">
-        <item name="android:background">#F6922C</item>
+        <item name="android:background">#000000</item>
         <item name="android:logo">@android:color/transparent</item>
     </style>
 
