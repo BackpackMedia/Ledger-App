@@ -10,3 +10,4 @@ android:
 
 before_install:
   - cd Ledger
+  - chmod +x gradlew
