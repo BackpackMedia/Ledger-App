@@ -1,5 +1,6 @@
 # Ledger-App
-![Travis-ci](https://travis-ci.org/BackpackMedia/Ledger-App#)
+![Travis-ci](https://travis-ci.org/BackpackMedia/Ledger-App.svg?branch=master)
+
 Easy way to keep track of who owes you on your phone
 
 ### To-do Android
