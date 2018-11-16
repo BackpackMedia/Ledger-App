@@ -9,6 +9,9 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
 
+script:
+  - ./gradlew build
+
 before_install:
   - cd Ledger
   - chmod +x gradlew
