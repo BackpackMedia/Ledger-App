@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Little Black Ledger</string>
     <string name="add">Add</string>
+    <string name="payee_name">Tester</string>
+    <string name="payee_amount">Test amount</string>
+    <string name="empty_list">Your ledger is caught up!</string>
 </resources>

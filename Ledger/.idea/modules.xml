@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Ledger.iml" filepath="$PROJECT_DIR$/Ledger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Ledger-App-Ledger.iml" filepath="$PROJECT_DIR$/.idea/modules/Ledger-App-Ledger.iml" group="Ledger" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Ledger-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Ledger-app.iml" group="Ledger/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

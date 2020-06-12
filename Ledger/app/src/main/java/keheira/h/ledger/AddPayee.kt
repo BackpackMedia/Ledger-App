@@ -1,21 +1,21 @@
 package keheira.h.ledger
 
-import android.app.Activity
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
-import android.telephony.PhoneNumberUtils
 import android.view.View
 import android.widget.EditText
-import android.R.attr.password
-import android.app.DatePickerDialog
-import java.util.*
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import keheira.h.ledger.databinding.NewPayeeBinding
 
 /**
  * Created by Keheira on 5/28/2017.
  */
 
-class AddPayee : Activity() {
+class AddPayee : Fragment() {
+    private lateinit var binding: NewPayeeBinding
     private var nametxt: EditText? = null
     private var numbertxt: EditText? = null
     private var amounttxt: EditText? = null
@@ -27,15 +27,19 @@ class AddPayee : Activity() {
     private var amount: Double? = null
     //private var date: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.new_payee)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = NewPayeeBinding.inflate(
+                inflater,
+                container,
+                false
+        )
+        return binding.root
+    }
 
-        nametxt = findViewById<View>(R.id.nameTxt) as EditText
-        numbertxt = findViewById<View>(R.id.numTxt) as EditText
-        amounttxt = findViewById<View>(R.id.amountTxt) as EditText
-        reasontxt = findViewById<View>(R.id.reasonTxt) as EditText
-        //datetxt = findViewById<View>(R.id.dateTxt) as EditText
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.savePayeeBtn.setOnClickListener {
+            addPerson()
+        }
     }
 
     /*fun setDate(view: View){
@@ -51,24 +55,18 @@ class AddPayee : Activity() {
         dpd.show()
     }*/
 
-    fun addPerson(view: View) {
-        name = nametxt!!.text.toString()
-        number = numbertxt!!.text.toString()
-        amount = java.lang.Double.parseDouble(amounttxt!!.text.toString())
-        reason = reasontxt!!.text.toString()
+    private fun addPerson() {
+        name = binding.nameTxt.text.toString()
+        number = binding.numTxt.text.toString()
+        amount = java.lang.Double.parseDouble(binding.amountTxt.text.toString())
+        reason = binding.reasonTxt.text.toString()
         if (checkFields()) {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("Message")
-            builder.setMessage("Make sure all fields are filled in")
-                    .setPositiveButton("OK"
-                    ) { dialog, which -> dialog.cancel() }
-            val alert = builder.create()
-            alert.show()
+           //show dialog
         } else {
-            val db = DatabaseHandler.getInstance(this)
+            val db = DatabaseHandler.getInstance(context)
             val person = Payee(name, number, amount!!, reason)
             db.addPerson(person)
-            finish()
+            findNavController().navigate(R.id.save_payee)
         }
     }
 

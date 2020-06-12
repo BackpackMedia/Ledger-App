@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/payeeListFragment">
+
+    <fragment
+        android:id="@+id/payeeListFragment"
+        android:name="keheira.h.ledger.PayeeListFragment"
+        android:label="PayeeListFragment" >
+        <action
+            android:id="@+id/navigate_to_addPayee"
+            app:destination="@id/addPayee" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPayee"
+        android:name="keheira.h.ledger.AddPayee"
+        android:label="AddPayee" >
+        <action
+            android:id="@+id/save_payee"
+            app:popUpTo="@id/payeeListFragment"/>
+    </fragment>
+</navigation>
